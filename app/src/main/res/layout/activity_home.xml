@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.greenmousetech.cryptoexchange.Home">
+
+    <RelativeLayout
+        android:id="@+id/body"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/topbar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <android.support.design.widget.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/andelaBlue"
+                android:id="@+id/appbar">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="serif-monospace"
+                    android:paddingTop="10dp"
+                    android:text="CryptoExchange"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="19sp"
+                    android:textStyle="bold" />
+            </android.support.design.widget.AppBarLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/middle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/topbar">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/crypto"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="7"
+                    android:elevation="5dp"
+                    app:cardBackgroundColor="@color/colorBody"
+                    app:contentPaddingTop="40dp">
+
+                    <Spinner
+                        android:id="@+id/cryptocurrency"
+                        android:layout_width="100dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center|top"
+                        android:layout_marginTop="20dp"
+                        android:backgroundTint="#444"></Spinner>
+
+                    <ImageView
+                        android:id="@+id/crypto_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="70dp"
+                        android:src="@drawable/ic_bitcoin" />
+
+                    <TextView
+                        android:id="@+id/exchange_rate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/currency_bg"
+                        android:layout_marginTop="40dp"
+                        android:padding="20dp"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:text="Loading..."
+                        android:textColor="@color/andelaBlue"
+                        android:textSize="30sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Touch to Convert"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:fontFamily="serif-monospace"
+                        android:textAllCaps="true"
+                        android:layout_marginTop="150dp"
+                        android:id="@+id/touch_to_convert"
+                       />
+
+                </android.support.v7.widget.CardView>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@color/andelaBlue"
+                    android:id="@+id/relativelayout">
+
+                    <TextView
+                        android:id="@+id/select_currency"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="serif-monospace"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="30dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="22dp"
+                        android:textColor="@color/colorWhite"
+                        android:text="Select Currency"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/currency"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="59dp"
+                        android:layout_toRightOf="@+id/select_currency"
+                        android:background="@null"
+                        android:paddingTop="19dp"></Spinner>
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>

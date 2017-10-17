@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6b3832</color>
+    <color name="colorPrimaryDark">#444</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorWhite">#fff</color>
+    <color name="colorBody">#e0e0e0</color>
+    <color name="bitcoinColor">#FCAF49</color>
+    <color name="etherColor">#696969</color>
+    <color name="andelaBlue">#415dbf</color>
+</resources>
