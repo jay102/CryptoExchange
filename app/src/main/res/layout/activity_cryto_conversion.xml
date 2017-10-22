@@ -16,7 +16,7 @@
             android:id="@+id/appbar"
             android:layout_width="match_parent"
             android:layout_height="300dp"
-            android:background="@drawable/gradientbg"
+            android:background="@color/dark"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true">
@@ -24,8 +24,18 @@
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"></android.support.v7.widget.Toolbar>
-
+                android:layout_height="50dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/date"
+                    android:text="01-01-2017"
+                    android:layout_gravity="end"
+                    android:padding="10dp"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="17sp"
+                    />
+            </android.support.v7.widget.Toolbar>
 
 
                 <TextView
@@ -43,10 +53,11 @@
                 <EditText
                     android:id="@+id/converted_currency"
                     android:layout_width="wrap_content"
+                    android:background="@drawable/conversion_currency_bg"
                     android:layout_height="wrap_content"
+                    android:padding="20dp"
                     android:layout_marginTop="30dp"
                     android:layout_gravity="center"
-                    android:backgroundTint="@color/colorWhite"
                     android:fontFamily="serif"
                     android:text="384.56"
                     android:textColor="@color/colorWhite"
@@ -59,7 +70,8 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/appbar">
+            android:layout_below="@+id/appbar"
+            android:background="#e0e0e0">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -82,7 +94,6 @@
                     android:backgroundTint="@color/colorPrimary"
                     android:fontFamily="serif"
                     android:text="1"
-                    android:textColor="@color/colorPrimary"
                     android:textSize="50sp" />
 
 

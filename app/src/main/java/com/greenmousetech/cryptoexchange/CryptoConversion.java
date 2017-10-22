@@ -13,12 +13,15 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.TimeZone;
 
 import static com.greenmousetech.cryptoexchange.Home.CHOSEN_CURRENCY;
 
 public class CryptoConversion extends AppCompatActivity {
-    TextView CryptoCurrency;
+    TextView CryptoCurrency,date;
     EditText baseCurrency, ConvertedCurrency;
     Spinner chosenCryptoDropdown;
     ImageView cryptoImage;
@@ -50,6 +53,13 @@ public class CryptoConversion extends AppCompatActivity {
         ConvertedCurrency = (EditText) findViewById(R.id.converted_currency);
         chosenCryptoDropdown = (Spinner) findViewById(R.id.crypto_currency_dropdown);
         cryptoImage = (ImageView) findViewById(R.id.crypto_image);
+        date = (TextView) findViewById(R.id.date);
+
+        //Set Date
+        TimeZone lagosTimeZone = TimeZone.getTimeZone("Africa/Lagos");
+        Calendar calendar = Calendar.getInstance(lagosTimeZone);
+        SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
+        date.setText(df.format(calendar.getTime()));
 
         //getting our stored values from previous activity
         preferences = this.getSharedPreferences(CHOSEN_CURRENCY, MODE_PRIVATE);
@@ -79,10 +89,11 @@ public class CryptoConversion extends AppCompatActivity {
         //create adapter for spinner and populate it
         adapter = new ArrayAdapter<String>(this,
                 R.layout.spinner_item_two, CryptoConvertedIn);
-
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         //Attach Spinners to adapter
         chosenCryptoDropdown.setAdapter(adapter);
         adapter.notifyDataSetChanged();
+
 
         //TextWatcher to Handle Our Conversions Concurrently
         watcher1 = new TextWatcher() {

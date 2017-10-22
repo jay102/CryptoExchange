@@ -8,4 +8,5 @@
     <color name="bitcoinColor">#FCAF49</color>
     <color name="etherColor">#696969</color>
     <color name="andelaBlue">#415dbf</color>
+    <color name="dark">#696969</color>
 </resources>

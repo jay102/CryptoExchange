@@ -129,7 +129,7 @@ public class Home extends AppCompatActivity {
         });
         //set Spinner adapters to populate it
         adapter1 = new ArrayAdapter<String>(this,
-                R.layout.spinner_item_two, ReturnedCurrencies);
+                R.layout.spinner_item, ReturnedCurrencies);
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
 
