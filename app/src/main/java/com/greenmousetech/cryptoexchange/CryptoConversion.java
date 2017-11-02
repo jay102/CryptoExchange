@@ -7,14 +7,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.TimeZone;
 
@@ -23,14 +20,12 @@ import static com.greenmousetech.cryptoexchange.Home.CHOSEN_CURRENCY;
 public class CryptoConversion extends AppCompatActivity {
     TextView CryptoCurrency,date;
     EditText baseCurrency, ConvertedCurrency;
-    Spinner chosenCryptoDropdown;
+    TextView chosenCrypto;
     ImageView cryptoImage;
     SharedPreferences preferences;
     String Crypto;
     String SelectedCurrency;
     String SelectedCurrencyValue;
-    ArrayAdapter<String> adapter;
-    ArrayList<String> CryptoConvertedIn;
     double ValueToUse;
     double ConvertedValue;
     TextWatcher watcher1;
@@ -51,7 +46,7 @@ public class CryptoConversion extends AppCompatActivity {
         CryptoCurrency = (TextView) findViewById(R.id.currency);
         baseCurrency = (EditText) findViewById(R.id.currency_to_convert);
         ConvertedCurrency = (EditText) findViewById(R.id.converted_currency);
-        chosenCryptoDropdown = (Spinner) findViewById(R.id.crypto_currency_dropdown);
+        chosenCrypto = (TextView) findViewById(R.id.crypto_currency_dropdown);
         cryptoImage = (ImageView) findViewById(R.id.crypto_image);
         date = (TextView) findViewById(R.id.date);
 
@@ -72,9 +67,7 @@ public class CryptoConversion extends AppCompatActivity {
         ConvertedCurrency.setText(SelectedCurrencyValue);
 
 
-        //initialize ArrayList to hold CryptoCurrency from previous Activity to Feed to our Adapter
-        CryptoConvertedIn = new ArrayList<>();
-        CryptoConvertedIn.add(Crypto);
+        chosenCrypto.setText(Crypto);
 
         if (Crypto.equals("BTC")) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -86,13 +79,7 @@ public class CryptoConversion extends AppCompatActivity {
             }
         }
 
-        //create adapter for spinner and populate it
-        adapter = new ArrayAdapter<String>(this,
-                R.layout.spinner_item_two, CryptoConvertedIn);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        //Attach Spinners to adapter
-        chosenCryptoDropdown.setAdapter(adapter);
-        adapter.notifyDataSetChanged();
+
 
 
         //TextWatcher to Handle Our Conversions Concurrently

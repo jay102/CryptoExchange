@@ -60,6 +60,7 @@
                     android:layout_gravity="center"
                     android:fontFamily="serif"
                     android:text="384.56"
+                    android:inputType="numberDecimal"
                     android:textColor="@color/colorWhite"
                     android:textSize="50sp" />
 
@@ -78,12 +79,14 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <Spinner
+                <TextView
                     android:id="@+id/crypto_currency_dropdown"
                     android:layout_width="100dp"
                     android:layout_height="40dp"
                     android:layout_gravity="right"
-                    android:background="@null"></Spinner>
+                    android:textSize="30sp"
+                    android:text="BTC"
+                    ></TextView>
 
                 <EditText
 
